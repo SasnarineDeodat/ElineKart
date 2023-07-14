@@ -22,3 +22,4 @@ const users = [
     isAdmin: false,
   },
 ];
+export default users;
