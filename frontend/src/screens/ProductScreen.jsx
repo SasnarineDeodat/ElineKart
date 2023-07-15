@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
+import Loader from "../components/Loader";
+import Message from "../components/Message";
 import Rating from "../components/Rating";
 import { useGetProductDetailsQuery } from "../slices/productsApiSlice";
 
@@ -19,9 +21,9 @@ const ProductScreen = () => {
         Go Back
       </Link>
       {isLoading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
-        <div>{error?.data?.message || error.error}</div>
+        <Message>{error?.data?.message || error.error}</Message>
       ) : (
         <Row>
           <Col md={5}>
