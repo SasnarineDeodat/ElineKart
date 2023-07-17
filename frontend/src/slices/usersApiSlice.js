@@ -1,11 +1,11 @@
-import { USERS_URL } from "../constants";
 import { apiSlice } from "./apiSlice";
+import { USERS_URL } from "../constants";
 
-export const usersApiSlice = apiSlice.injectEndpoints({
+export const userApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({
-        url: USERS_URL / auth,
+        url: `${USERS_URL}/auth`,
         method: "POST",
         body: data,
       }),
@@ -13,5 +13,4 @@ export const usersApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useLoginMutation } = usersApiSlice;
-//q: why is auth not defined?
+export const { useLoginMutation } = userApiSlice;
